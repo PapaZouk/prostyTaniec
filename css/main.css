@@ -262,7 +262,17 @@ h5 {
 }
 
 html {
-  scroll-padding-top: 300px;
+  scroll-padding-top: 100px;
+}
+@media (min-width: 320px) {
+  html {
+    scroll-padding-top: 80px;
+  }
+}
+@media (min-width: 768px) {
+  html {
+    scroll-padding-top: 100px;
+  }
 }
 
 body {
