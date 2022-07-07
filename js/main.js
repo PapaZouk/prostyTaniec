@@ -1,12 +1,12 @@
 document.addEventListener('DOMContentLoaded', function() {
 
     const nav = document.querySelector('#navbar');
-    let logo = document.querySelector('#logo');
+    const logo = document.querySelector('#logo');
     const navLink = document.getElementById('navbarNavAltMarkup');
 
     function addBackground() {
         // Zmienia kolor tła nawigacji z podstawowego na ciemny
-        let i = window.scrollY;
+        const i = window.scrollY;
         if (i >= 300) {
             nav.classList.add('shadow-bg')
         } else {
@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function addPadding() {
         // Dodaje ekstra przestrzeń padding wokół loga
-        let i = window.scrollY;
+        const i = window.scrollY;
 
         if (i >= 300) {
             nav.classList.add('nav-padding')
@@ -27,8 +27,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function changeLogo() {
         // Funkcja zmienia kolor loga z czarnego na biały i na odwrót
-        let i = window.scrollY;
-        let oldLogo = logo.getAttribute('src')
+        const i = window.scrollY;
+        const oldLogo = logo.getAttribute('src')
 
         let newLogo = document.createAttribute('src')
         newLogo.value = "./img/logo-light.png"
