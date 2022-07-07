@@ -1,0 +1,799 @@
+@import './partials/_base/reset';
+@import './partials/_typography/typography';
+@import './partials/_base/base';
+@import './partials/_variables/variables';
+@import './partials/_animations/animation';
+
+/*! End of reset */
+
+// Globalne
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	scroll-padding-top: 300px;
+}
+
+body {
+	position: relative;
+	font-family: $main-font-family;
+	font-size: $font-size;
+	color: $font-color-main;
+	background-color: white;
+}
+
+h2 {
+	text-transform: uppercase;
+	text-align: center;
+	margin-bottom: 20px;
+}
+
+.underline {
+	margin: 0 auto 20px;
+	width: 120px;
+	height: 4px;
+	background-color: $theme-base-dark-3;
+}
+
+//  USTAWIENIA DLA PASKA NAWIGACJI STRONY WRAZ Z LOGIEM
+.navbar {
+	width: 100%;
+	margin: 0;
+	padding: 20px 5px 10px;
+	position: fixed;
+	text-transform: uppercase;
+	background-color: $theme-base-dark;
+	z-index: 2000;
+	transition: background-color 0.6s, padding 0.6s;
+
+	.navbar-brand {
+		margin-left: 10px;
+		@media (min-width: 575px) {
+			width: 60%;
+		}
+
+		@media (max-width: 767px) {
+			width: 60%;
+		}
+
+		@media (min-width: 768px) {
+			width: 60%;
+			margin-left: 0;
+		}
+	}
+
+	a {
+		color: darken($font-color-main, 90%);
+		transition: color 0.3s;
+		width: 90px;
+		margin-left: 2px;
+
+		&:hover {
+			// color: darken($theme-base-color-2, 80%);
+			color: whitesmoke;
+			font-weight: bold;
+		}
+	}
+
+	button {
+		margin-right: 30px;
+		color: $font-color-main;
+
+		@media (max-width: 575px) {
+			margin-right: 10px;
+		}
+
+		@media (min-width: 576px) {
+			margin-right: 10px;
+		}
+		.bi-list {
+			display: block;
+			padding: 5px;
+			font-size: 16px;
+			z-index: 1000;
+			color: $font-color-main;
+		}
+	}
+
+	// BURGER-ICON Z GETBOOTSTRAP.COM
+
+	.active {
+		font-weight: bold;
+		color: $font-color-main;
+	}
+
+	#logo {
+		max-width: 128px;
+		padding-right: 10px;
+
+		@media (max-width: 575px) {
+			margin-right: 20px;
+			width: 40%;
+		}
+
+		@media (min-width: 576px) {
+			width: 60%;
+		}
+	}
+}
+
+// USTAWIENIA DLA HERO IMAGE I TYTUŁU STRONY
+header {
+	.hero-img {
+		display: flex;
+		position: relative;
+		justify-content: center;
+		height: 100vh;
+		width: 100vw;
+		background-size: cover;
+		background-position: center;
+		background-repeat: no-repeat;
+		background-attachment: fixed;
+
+		@media (max-width: 767px) {
+			background-image: url('../img/dance-03-small.webp');
+		}
+
+		@media (min-width: 768px) {
+			background-image: url('../img/dance-03.webp');
+		}
+
+		// STYLIZUJE TYTUŁ, PODTYTUŁ I BUTTON
+		.hero-text {
+			display: flex;
+			flex-flow: column wrap;
+			justify-content: center;
+			// align-content: center;
+			align-items: center;
+			z-index: 5;
+
+			h1 {
+				width: 70vw;
+				text-align: center;
+				text-transform: uppercase;
+				align-items: center;
+				color: $font-color-main;
+				text-shadow: 2px 2px 3px black;
+
+				@media (max-width: 375px) {
+					width: 90vw;
+					font-size: 40px;
+					margin-bottom: 10px;
+				}
+
+				@media (min-width: 376px) and (max-width: 991px) {
+					width: 85vw;
+					font-size: 40px;
+					margin-top: 50px;
+					margin-bottom: 10px;
+					letter-spacing: 2px;
+				}
+				@media (min-width: 992px) {
+					letter-spacing: 2px;
+				}
+			}
+
+			h3 {
+				width: 80vw;
+				font-size: 20px;
+				padding: 10px;
+				margin-bottom: 20px;
+				margin-top: 6px;
+				margin-left: 16px;
+				margin-right: 16px;
+				border-radius: 20px;
+				text-align: center;
+				color: black;
+				color: $font-color-main;
+
+				@media (max-width: 575px) {
+					background-color: $theme-main-color;
+					width: fit-content;
+
+				}
+
+				@media (min-width: 576px) {
+					line-height: $h3;
+					margin-bottom: 30px;
+					font-size: 20px;
+					width: fit-content;
+					background-color: $theme-main-color;
+				}
+
+				@media (min-width: 992px) {
+					width: fit-content;
+					font-size: 24px;
+					background-color: $theme-main-color;
+					line-height: 34px;
+					margin-top: 12px;
+				}
+
+				@media (min-width: 1200px) {
+					width: fit-content;
+					line-height: 40px;
+					font-size: 30px;
+					margin-top: 20px;
+				}
+			}
+
+			.btn {
+				z-index: 2000;
+			}
+		}
+
+		// ROZJAŚNIA HERO IMG
+		.hero-shadow {
+			position: absolute;
+			background-color: darken($theme-main-color, 7%);
+			height: 100vh;
+			width: 100vw;
+			opacity: 0.6;
+        }
+
+		// STRZAŁKA PRZEWIJANIA
+
+		.arrowDown {
+			position: absolute;
+			top: 80%;
+			padding: 60px;
+			z-index: 500;
+			color: #ddd;
+			font-size: 40px;
+            animation: pulse 2s infinite;
+
+			@media (max-width: 768px) {
+				animation: arrowMove 1.3s infinite;
+			}
+
+			@media (max-width: 767px) {
+				padding: 20px;
+                
+			}
+
+		}
+	}
+}
+
+.shadow-bg {
+	background-color: $theme-main-color;
+	transition: background-color 0.6s;
+	a {
+		color: $font-color-main;
+
+		&:hover {
+			color: $theme-base-color-2;
+		}
+	}
+}
+
+.nav-padding {
+	padding: 30px 10px 10px;
+	transition: padding 0.6s;
+}
+
+/**========================================
+ *              Sekcja O NAS
+ * ======================================== 
+ */
+.aboutUs {
+	.fa-graduation-cap,
+	.fa-mobile-screen-button,
+	.fa-person,
+	.fa-people-group,
+	.fa-shoe-prints,
+	.fa-music,
+	.fa-hand-holding-heart {
+		margin-top: 20px;
+		margin-bottom: 20px;
+		padding: 10px 20px;
+		font-size: 40px;
+		line-height: 40px;
+		color: #ddd;
+		transition: color 0.6s, transform 0.6s;
+
+		&:hover {
+			color: $theme-base-color-2;
+			animation: pulse 1s infinite;
+		}
+	}
+
+	.aboutUs-card-title {
+		font-size: 16px;
+		text-transform: uppercase;
+		@media (max-width: 576px) {
+			font-size: 26px;
+		}
+	}
+
+	.aboutUs-card-text {
+		font-size: 14px;
+		line-height: 18px;
+	}
+}
+
+/**========================================
+ *             Sekcja OFERTA
+ * ======================================== 
+ */
+
+.offer-bg {
+	position: relative;
+	height: 850px;
+	width: 100vw;
+	background: url('../img/wedding-dance-02.webp') no-repeat center top;
+	background-color: $theme-base-dark-2;
+	background-size: cover;
+	background-attachment: fixed;
+	z-index: 101;
+
+	@media (min-width: 320px) {
+		height: 900px;
+	}
+
+	@media (min-width: 576px) {
+		height: 700px;
+	}
+
+	@media (min-width: 768px) {
+		height: 500px;
+		background: url('../img/wedding-dance-02-sm.webp') no-repeat center top;
+		background-size: cover;
+		background-attachment: fixed;
+	}
+
+	@media (min-width: 992px) {
+		height: 420px;
+	}
+
+	.offer-card-title {
+		text-transform: uppercase;
+
+		@media (max-width: 576px) {
+			font-size: 26px;
+		}
+	}
+
+	.offer-text {
+		position: absolute;
+		left: 50%;
+		line-height: 18px;
+		z-index: 100;
+		transform: translate(-50%);
+
+	}
+
+	.underline {
+		position: absolute;
+		margin-top: 10px;
+		left: 50%;
+		transform: translate(-50%);
+	}
+
+	.offer-bg-shadow {
+		position: absolute;
+		background-color: $theme-main-color-dark;
+		height: 850px;
+		width: 100vw;
+		opacity: 0.7;
+
+		@media (min-width: 320px) {
+			height: 900px;
+		}
+
+		@media (min-width: 576px) {
+			height: 700px;
+		}
+
+		@media (min-width: 768px) {
+			height: 500px;
+		}
+		@media (min-width: 992px) {
+			height: 420px;
+		}
+	}
+
+	.fa-black-tie,
+	.fa-sun,
+	.fa-person-walking {
+		margin-top: 30px;
+		margin-bottom: 30px;
+		font-size: 40px;
+		z-index: 350;
+		color: #ddd;
+		transition: color 0.6s;
+
+		&:hover {
+			color: $theme-base-dark;
+			animation: rotate 0.5s;
+		}
+	}
+}
+
+/**========================================
+ *             Sekcja CENNIK
+ * ======================================== 
+ */
+
+.prices {
+	height: 100%;
+	margin: 20px auto;
+	background-color: white;
+
+	&-card {
+		transition: transform 0.6s;
+		&:hover {
+			transform: scale(1.04);
+			@media (max-width: 575px) {
+				transform: none;
+			}
+		}
+
+	}
+
+	&-target {
+		background-color: $theme-sec-color;
+	}
+
+	&-text {
+		color: black;
+		margin: 0 auto;
+	}
+
+	&-title {
+		text-transform: uppercase;
+		color: black;
+	}
+
+	&-title-card {
+		text-transform: uppercase;
+		color: black;
+		@media (min-width: 320px) {
+			font-size: 26px;
+			line-height: 36px;
+		}
+		@media (min-width: 576px) {
+			font-size: 22px;
+			line-height: 36px;
+		}
+		@media (min-width: 768px) {
+			font-size: 28px;
+		}
+	}
+
+	&-underline {
+		height: 3px;
+		width: 30%;
+		margin-top: 4px;
+		background-color: rgba(85, 85, 85, 0.4);
+	}
+}
+
+.list-group {
+	margin: 5px;
+	padding: 0;
+}
+
+.list-group-item:nth-child(1) {
+	height: 100px;
+}
+.list-group-item:nth-child(3) {
+	height: 140px;
+
+	@media (max-width: 575px) {
+		height: 155px;
+	}
+	@media (min-width: 576px) {
+		height: 230px;
+	}
+	@media (min-width: 768px) {
+		height: 160px;
+	}
+	@media (min-width: 992px) {
+		height: 140px;
+	}
+	@media (min-width: 1200px) {
+		height: 140px;
+	}
+}
+.list-group-item:nth-child(4) {
+	height: 30px;
+}
+.list-group-item:nth-child(5) {
+	height: 60px;
+}
+
+/**========================================
+    *             Sekcja GALERIA
+    * ======================================== 
+    */
+
+.gallery .container {
+	width: 100%;
+	margin-bottom: 20px;
+
+	h2 {
+		margin-top: 30px;
+	}
+
+	@media (min-width: 576px) {
+		width: 90%;
+	}
+	@media (min-width: 768px) {
+		width: 80%;
+	}
+	@media (min-width: 992px) {
+		width: 60%;
+	}
+	@media (min-width: 1200px) {
+		width: 40%;
+	}
+}
+
+.gallery {
+	background-color: $theme-main-color;
+	padding-bottom: 50px;
+
+	.card {
+		width: 100%
+	}
+
+	.carousel-item {
+		height: 300px;
+		width: 100%;
+		img {
+			transform: translate(0, -20%);
+		}
+	}
+	.carousel-indicators {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 30px;
+		padding: 30px 0;
+	}
+
+	.movies {
+		@media (max-width: 765px) {
+			display: none;
+		}
+		@media (min-width: 576px) and (max-width: 1289px) {
+			width: 100%;
+		}
+		@media (min-width: 1290px) {
+			width: 640px;
+		}
+	}
+	
+	.video-resize {
+		width: 100%;
+	}
+
+	.movies-box {
+		object-fit: scale-down;
+	}
+}
+
+.gallery .carousel .bg-dark {
+	width: 100%;
+	height: 10%;
+	margin: 2px auto;
+	align-items: center;
+	opacity: 0.8;
+	@media (min-width: 768px) {
+		transform: translate(0, -100%);
+		width: 96%;
+		height: 2%;
+		margin: 5px auto;
+	}
+	@media (min-width: 992px) {
+		transform: translate(0, -40%);
+		width: 97%;
+	}
+	@media (min-width: 1200px) {
+		transform: translate(0, -110%);
+		width: 97%;
+	}
+	@media (min-width: 1400px) {
+		transform: translate(0, 10%);
+		width: 97%;
+	}
+}
+
+
+/**========================================
+ *                  TEAM
+ * ======================================== 
+ */
+
+.team-bg {
+	position: relative;
+	background: url('../img/web-bg-01.webp') no-repeat center;
+	background-size: cover;
+	background-attachment: fixed;
+	z-index: 0;
+
+	.bg-shadow {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		background-color: $theme-base-dark-2;
+		opacity: 0.6;
+		z-index: -5;
+	}
+}
+
+.team .container {
+	.row {
+		padding: 0;
+		margin: 0;
+	}
+
+	.card {
+		margin-top: 0px;
+		margin-bottom: 40px;
+		margin-right: 20px;
+		margin-left: 20px;
+		color: black;
+		transition: transform 0.3s;
+
+		&:hover {
+			transform: scale(0.95);
+		}
+
+		&-title {
+			text-transform: uppercase;
+			font-size: 26px;
+			padding-bottom: 10px;
+		}
+
+		&-img-top {
+			background: url('../img/profile02b.webp') no-repeat;
+			background-size: cover;
+			background-position: center;
+			height: 350px;
+		}
+
+		&-second {
+			background: url('../img/profile03b.webp') no-repeat;
+			background-size: cover;
+			background-position: center;
+		}
+
+		&-body {
+			padding-top: 20px;
+			@media (min-width: 320px) {
+				height: 560px;
+			}
+
+            @media (min-width: 370px) and (max-width: 499px) {
+                height: 440px;
+				padding-bottom: 10px;
+            }
+			@media (min-width: 500px) and (max-width: 575px) {
+				height: 320px;
+            }
+			@media (min-width: 576px) {
+				height: 300px;
+			}
+			@media (min-width: 768px) {
+				height: 470px;
+			}
+			@media (min-width: 992px) {
+				height: 310px;
+			}
+			@media (min-width: 1200px) {
+				height: 300px;
+			}
+			@media (min-width: 1400px) {
+				height: 280px;
+			}
+		}
+
+		span {
+			font-weight: bold;
+			font-size: 18px;
+		}
+		
+
+		&-footer {
+			width: 100%;
+			line-height: 100%;
+
+			@media (min-width: 320px) {
+				margin-top: 50px;
+			}
+
+			@media (min-width: 375px) {
+				margin-top: 46px;
+			}
+		}
+	}
+}
+
+/**========================================
+ *                  CONTACT
+ * ======================================== 
+ */
+
+.contact {
+    background-color: black;
+    padding-bottom: 100px;
+
+	.fa-envelope {
+		font-size: 32px;
+		padding-right: 12px;
+        transition: transform .4s, color .5s;
+        &:hover {
+            transform: scale(1.3);
+            color: $theme-base-color-3;
+        }
+	}
+
+    &-text {
+        a {
+            height: 50px;
+            font-size: 16px;
+            color: #ddd;
+            line-height: 16px;
+
+            .fa-instagram,
+            .fa-twitter,
+            .fa-tiktok,
+            .fa-facebook {
+                font-size: 32px;
+                margin-left: 10px;
+                margin-right: 10px;
+                transition: transform .4s, color .5s;
+                &:hover {
+                    transform: scale(1.3);
+                    color: $theme-base-color-3;
+                }
+            }
+        }
+
+    
+	.fa-location-dot {
+        font-size: 32px;
+		padding-right: 12px;
+        transition: transform .4s, color .5s;
+        &:hover {
+            transform: scale(1.3);
+            color: $theme-base-color-3;
+        }
+
+	}
+
+    }
+    
+    h4 {
+        margin-top: 40px;
+        margin-bottom: 20px;
+        @media (max-width: 767px) {
+            font-size: 28px;
+        }
+        @media (min-width: 768px) {
+            font-size: 30px;
+        }
+        @media (min-width: 992px) {
+            font-size: 32px;
+        }
+    }
+}
+
+/**========================================
+ *                  FOOTER
+ * ======================================== 
+ */
+
+.footer {
+	height: 80px;
+	font-size: 16px;
+	line-height: 18px;
+}

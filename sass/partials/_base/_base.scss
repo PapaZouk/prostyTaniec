@@ -1,0 +1,24 @@
+// Paleta kolorów
+
+
+//====================
+// Main
+//====================
+
+/* SCSS RGB */
+$theme-main-color: #43698f;
+$theme-base-color: #718aa4;
+$theme-base-color-2: #869582;
+$theme-base-color-3: #D5A19E;
+$theme-sec-color: #E6C9B5;
+$theme-third-color: #FBEFE3;
+
+$theme-main-color-dark: darken($theme-main-color, 10%);
+$theme-base-dark: darken($theme-base-color-3, 10%);
+$theme-base-dark-2: darken($theme-base-color-2, 20%);
+$theme-base-dark-3: darken($theme-base-color-3, 5%);
+$theme-sec-dark: darken($theme-sec-color, 10%);
+
+$font-color-main: #FFFFF9;
+
+$theme-complementary: hue($theme-base-color);

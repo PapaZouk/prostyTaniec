@@ -1,0 +1,118 @@
+$main-font-family: 'Ubuntu', sans-serif;
+
+// Font size:
+
+$golden-ratio: 1.618px;
+
+$font-size: 10 * $golden-ratio;
+$font-size-xs: $font-size * 0.786;
+$font-size-s: $font-size * 1.13;
+$font-size-sm: $font-size * 1.272;
+$font-size-m: $font-size * 1.414;
+$font-size-xm: $font-size * 1.618;
+$font-size-l: $font-size * 2;
+$font-size-xl: $font-size * 2.618;
+$font-size-xxl: $font-size * 3.618;
+
+// Headings
+
+$h1: $font-size-xxl;
+$h2: $font-size-xl;
+$h3: $font-size-l;
+$h4: $font-size-xm;
+$h5: $font-size-m;
+
+h1 {
+    font-size: $h1;
+    @media (max-width: 575px) {
+        font-size: $h1 / 1.5;
+    }
+
+    @media (min-width: 576px) {
+        font-size: $h1 / 1.2;
+    }
+
+    @media (min-width: 768px) {
+        font-size: $h1 * 0.886;
+    }
+
+    @media (min-width: 1200px) {
+        font-size: $h1 * 1.13;
+    }
+}
+
+h2 {
+    font-size: $h2;
+    @media (max-width: 576px) {
+        font-size: $h2 / 1.5;
+    }
+
+    @media (min-width: 576px) {
+        font-size: $h2 / 1.2;
+    }
+
+    @media (min-width: 768px) {
+        font-size: $h2 * 0.886;
+    }
+
+    @media (max-width: 1200px) {
+        font-size: $h2 * 1.13;
+    }
+}
+
+h3 {
+    font-size: $h3;
+    @media (max-width: 576px) {
+        font-size: $h3 /1.5;
+    }
+
+    @media (min-width: 576px) {
+        font-size: $h3 / 1.2;
+    }
+
+    @media (min-width: 768px) {
+        font-size: $h3 * 0.886;
+    }
+
+    @media (min-width: 1200px) {
+        font-size: $h3 * 1.13;
+    }
+}
+
+h4 {
+    font-size: $h4;
+    @media (max-width: 576px) {
+        font-size: $h4 / 1.5;
+    }
+
+    @media (min-width: 576px) {
+        font-size: $h4 / 1.2;
+    }
+
+    @media (min-width: 768px) {
+        font-size: $h4 * 0.886;
+    }
+
+    @media (min-width: 1200px) {
+        font-size: $h4 * 1.13;
+    }
+}
+
+h5 {
+    font-size: $h5;
+    @media (max-width: 576px) {
+        font-size: $h5 / 1.5;
+    }
+
+    @media (min-width: 576px) {
+        font-size: $h5 / 1.2;
+    }
+
+    @media (min-width: 768px) {
+        font-size: $h5 * 0.886;
+    }
+
+    @media (min-width: 1200px) {
+        font-size: $h5 * 1.13;
+    }
+}
