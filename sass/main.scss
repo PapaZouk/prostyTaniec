@@ -140,7 +140,7 @@ header {
 		position: relative;
 		justify-content: center;
 		height: 100vh;
-		width: 100vw;
+		width: 100%;
 		background-size: cover;
 		background-position: center;
 		background-repeat: no-repeat;
@@ -159,7 +159,6 @@ header {
 			display: flex;
 			flex-flow: column wrap;
 			justify-content: center;
-			// align-content: center;
 			align-items: center;
 			z-index: 5;
 
@@ -242,7 +241,7 @@ header {
 			position: absolute;
 			background-color: darken($theme-main-color, 7%);
 			height: 100vh;
-			width: 100vw;
+			width: 100%;
 			opacity: 0.6;
         }
 
@@ -273,6 +272,7 @@ header {
 .shadow-bg {
 	background-color: $theme-main-color;
 	transition: background-color 0.6s;
+	box-shadow: 2px 0px 1px 4px $theme-base-color;
 	a {
 		color: $font-color-main;
 
@@ -288,7 +288,7 @@ header {
 }
 
 /**========================================
- *              Sekcja O NAS
+ *              Sekcja OFERTA
  * ======================================== 
  */
 .aboutUs {
@@ -328,19 +328,19 @@ header {
 }
 
 /**========================================
- *             Sekcja OFERTA
+ *             Sekcja NAUKA
  * ======================================== 
  */
 
 .offer-bg {
 	position: relative;
 	height: 850px;
-	width: 100vw;
+	width: 100%;
 	background: url('../img/wedding-dance-02.webp') no-repeat center top;
 	background-color: $theme-base-dark-2;
 	background-size: cover;
 	background-attachment: fixed;
-	z-index: 101;
+	z-index: -1;
 
 	@media (min-width: 320px) {
 		height: 900px;
@@ -389,8 +389,9 @@ header {
 		position: absolute;
 		background-color: $theme-main-color-dark;
 		height: 850px;
-		width: 100vw;
+		width: 100%;
 		opacity: 0.7;
+		z-index: 1;
 
 		@media (min-width: 320px) {
 			height: 900px;
@@ -484,9 +485,26 @@ header {
 	}
 }
 
-.list-group {
-	margin: 5px;
-	padding: 0;
+.price {
+	display: flex;
+
+	p {
+		display: flex;
+		font-size: 22px;
+		line-height: 24px;
+		margin: 0 auto;
+	}
+	strong {
+		display: block;
+		font-size: 28px;
+		line-height: 28px;
+	}
+	span {
+		display: block;
+		font-size: 14px;
+		line-height: 14px;
+		padding: 8px;
+	}
 }
 
 .list-group-item:nth-child(1) {
@@ -496,7 +514,7 @@ header {
 	height: 140px;
 
 	@media (max-width: 575px) {
-		height: 155px;
+		height: 175px;
 	}
 	@media (min-width: 576px) {
 		height: 230px;
